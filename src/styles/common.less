@@ -1,16 +1,16 @@
-.container {
-    display: flex;
+@import './default.less';
 
+.container {
     .nav-left {
-        width: 15%;
-        min-width: 180px;
         height: calc(100vh);
-        background-color:#001529;
+        background-color:@colorR;
+        color: @colorM;
     }
 
     .main {
-        flex: 1;
         height: calc(100vh);
+        background-color: @colorL;
+        overflow: auto;
     }
 
     .content {
