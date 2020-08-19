@@ -31,10 +31,11 @@ export default class NavLeft extends React.Component {
     }
 
     render() {
+        const logoSrc = process.env.NODE_ENV === 'development' ? '/assets/logo-ant.svg' : `${process.env.PUBLIC_URL}/assets/logo-ant.svg`;
         return (
             <div>
                 <div className="logo">
-                    <img src="/assets/logo-ant.svg" alt="" />
+                    <img src={logoSrc} alt="" />
                     <h1>Bicycle MS</h1>
                 </div>
                 <Menu
