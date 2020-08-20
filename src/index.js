@@ -4,14 +4,14 @@ import './index.css';
 // import App from './App';
 // import Jsx from './demos/Jsx';
 // import Life from './pages/demos/Life';
-import Admin from './admin';
+// import Admin from './admin';
+import Router from './router';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <Jsx title="课程列表" /> */}
-    {/* <Life /> */}
-    <Admin />
+    {/* <Admin /> */}
+    <Router />
   </React.StrictMode>,
   document.getElementById('root')
 );
