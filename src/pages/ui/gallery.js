@@ -14,6 +14,7 @@ class Gallery extends Component {
     };
 
     render() {
+        const baseURL = process.env.NODE_ENV === 'development' ? '/gallery/' : `${process.env.PUBLIC_URL}/gallery/`;
         const imgs = [
             ['1.png', '2.png', '3.png', '4.png', '5.png'],
             ['6.png', '7.png', '8.png', '9.png', '10.png'],
@@ -24,7 +25,7 @@ class Gallery extends Component {
         const imgList = imgs.map(list => list.map(item => (
             <Card
                 style={{marginBottom: 10}}
-                cover={<img src={'/gallery/' + item} onClick={() => this.openGallery(item)} />}
+                cover={<img src={`${baseURL}${item}`} onClick={() => this.openGallery(item)} />}
             >
                 <Card.Meta
                     title="React Admin"
