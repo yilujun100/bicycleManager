@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/bicycleManager/static/css/main.57e1a383.chunk.css",
-    "main.js": "/bicycleManager/static/js/main.34c37db6.chunk.js",
-    "main.js.map": "/bicycleManager/static/js/main.34c37db6.chunk.js.map",
+    "main.js": "/bicycleManager/static/js/main.166fbbf1.chunk.js",
+    "main.js.map": "/bicycleManager/static/js/main.166fbbf1.chunk.js.map",
     "runtime-main.js": "/bicycleManager/static/js/runtime-main.8abcc90b.js",
     "runtime-main.js.map": "/bicycleManager/static/js/runtime-main.8abcc90b.js.map",
     "static/css/2.0afd5702.chunk.css": "/bicycleManager/static/css/2.0afd5702.chunk.css",
     "static/js/2.f27aa584.chunk.js": "/bicycleManager/static/js/2.f27aa584.chunk.js",
     "static/js/2.f27aa584.chunk.js.map": "/bicycleManager/static/js/2.f27aa584.chunk.js.map",
     "index.html": "/bicycleManager/index.html",
-    "precache-manifest.eb64dfbb63e280532491e6fb38048968.js": "/bicycleManager/precache-manifest.eb64dfbb63e280532491e6fb38048968.js",
+    "precache-manifest.3cb744ab204a3c5d40bbe1076befe1d3.js": "/bicycleManager/precache-manifest.3cb744ab204a3c5d40bbe1076befe1d3.js",
     "service-worker.js": "/bicycleManager/service-worker.js",
     "static/css/2.0afd5702.chunk.css.map": "/bicycleManager/static/css/2.0afd5702.chunk.css.map",
     "static/css/main.57e1a383.chunk.css.map": "/bicycleManager/static/css/main.57e1a383.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.0afd5702.chunk.css",
     "static/js/2.f27aa584.chunk.js",
     "static/css/main.57e1a383.chunk.css",
-    "static/js/main.34c37db6.chunk.js"
+    "static/js/main.166fbbf1.chunk.js"
   ]
 }

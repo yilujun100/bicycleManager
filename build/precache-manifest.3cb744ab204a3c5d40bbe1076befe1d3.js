@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7fa62015c1ed7de7c12e8eb2f236af89",
+    "revision": "b43e7f1cd2abf923bb19d6a2f2a19a7c",
     "url": "/bicycleManager/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/bicycleManager/static/css/2.0afd5702.chunk.css"
   },
   {
-    "revision": "0a5d7ae6263e44a94f18",
+    "revision": "de133baf2474312ead63",
     "url": "/bicycleManager/static/css/main.57e1a383.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/bicycleManager/static/js/2.f27aa584.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "0a5d7ae6263e44a94f18",
-    "url": "/bicycleManager/static/js/main.34c37db6.chunk.js"
+    "revision": "de133baf2474312ead63",
+    "url": "/bicycleManager/static/js/main.166fbbf1.chunk.js"
   },
   {
     "revision": "bfcc29f12c23881cb07e",
