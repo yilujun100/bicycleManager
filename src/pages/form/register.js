@@ -176,13 +176,13 @@ class FormRegister extends Component {
                                 action="//jsonplaceholder.typicode.com/posts/"
                                 onChange={this.handleChange}
                             >
-                                {this.state.userImg ? <img src={this.state.userImg} width="100" height="100"/> : <PlusOutlined />}
+                                {this.state.userImg ? <img src={this.state.userImg} width="100" height="100" alt="userImg" /> : <PlusOutlined />}
                             </Upload>
                         </FormItem>
                         <FormItem
                             {...offsetLayout}
                         >
-                            <Checkbox>我已阅读过<a href="#">用户协议</a></Checkbox>
+                            <Checkbox>我已阅读过<a href="void: 0">用户协议</a></Checkbox>
                         </FormItem>
                         <FormItem
                             {...offsetLayout}

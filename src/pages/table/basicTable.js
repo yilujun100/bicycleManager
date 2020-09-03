@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Card, Table, Modal, Button, message } from 'antd';
 import axios from './../../axios';
+import Utils from './../../utils';
 
 class BasicTable extends Component {
     state = {
@@ -12,7 +13,7 @@ class BasicTable extends Component {
     };
 
     componentDidMount() {
-        const data = [
+        let data = [
             {
                 id: '0',
                 userName: 'Jack',
@@ -44,7 +45,7 @@ class BasicTable extends Component {
                 time: '09:00'
             }
         ];
-        data.map((item, index) => ({
+        data = data.map((item, index) => ({
             ...item,
             key: index
         }));
@@ -66,14 +67,18 @@ class BasicTable extends Component {
             }
         }).then(res => {
             if (res.code === 0) {
-                res.result.map((item, index) => ({
+                res.result.list = res.result.list.map((item, index) => ({
                     ...item,
                     key: index
                 }));
                 this.setState({
-                    dataSource2: res.result,
+                    dataSource2: res.result.list,
                     selectedRowKeys: [],
-                    selectedRows: null
+                    selectedRows: null,
+                    pagination: Utils.pagination(res, current => {
+                        _this.params.page = current;
+                        this.request();
+                    })
                 });
             }
         });
@@ -90,7 +95,20 @@ class BasicTable extends Component {
             selectedRowKeys,
             selectedRows: record
         });
-        console.log(this.state);
+    };
+
+    // 多选执行删除操作
+    handleDelete = () => {
+        const rows = this.state.selectedRows;
+        const ids = rows.map(item => item.id);
+        Modal.info({
+            title: '删除提示',
+            content: `您确定要删除这些数据吗？${ids.join(',')}`,
+            onOk: () => {
+                message.success('删除成功');
+                this.request();
+            }
+        })
     };
 
     render() {
@@ -167,6 +185,16 @@ class BasicTable extends Component {
             type: 'radio',
             selectedRowKeys
         };
+        const rowCheckSelection = {
+            type: 'checkbox',
+            selectedRowKeys,
+            onChange: (selectedRowKeys, selectedRows) => {
+                this.setState({
+                    selectedRowKeys,
+                    selectedRows
+                });
+            }
+        }
         return (
             <div style={{width: '100%'}}>
                 <Card title="基础表格">
@@ -199,6 +227,26 @@ class BasicTable extends Component {
                         columns={columns}
                         dataSource={this.state.dataSource2}
                         pagination={false}
+                    />
+                </Card>
+                <Card title="Mock-多选" style={{margin: '10px 0'}}>
+                    <div style={{marginBottom: 10}}>
+                        <Button onClick={this.handleDelete}>删除</Button>
+                    </div>
+                    <Table
+                        bordered
+                        rowSelection={rowCheckSelection}
+                        columns={columns}
+                        dataSource={this.state.dataSource2}
+                        pagination={false}
+                    />
+                </Card>
+                <Card title="Mock-表格分页" style={{margin: '10px 0'}}>
+                    <Table
+                        bordered
+                        columns={columns}
+                        dataSource={this.state.dataSource2}
+                        pagination={this.state.pagination}
                     />
                 </Card>
             </div>

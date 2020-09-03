@@ -55,7 +55,7 @@ class FormLogin extends Component {
                             <FormItem name="remember" valuePropName="checked" noStyle>
                                 <Checkbox>记住密码</Checkbox>
                             </FormItem>
-                            <a href="#" style={{float: 'right'}}>忘记密码</a>
+                            <a href="void: 0" style={{float: 'right'}}>忘记密码</a>
                         </FormItem>
                         <FormItem>
                             <Button type="primary" htmlType="submit">登录</Button>
