@@ -7,7 +7,7 @@ import axios from '../../axios';
 export default class Header extends React.Component {
     state = {};
 
-    componentWillMount() {
+    componentDidMount() {
         this.setState({
             userName: 'yilujun100'
         });
@@ -23,7 +23,7 @@ export default class Header extends React.Component {
     getWeatherAPIData() {
         let city = '成都';
         axios.jsonp({
-            url: 'http://api.map.baidu.com/telematics/v3/weather?location=' + encodeURIComponent(city) + '&output=json&ak=3p49MVra6urFRGOT9s8UBWr2'
+            url: 'http://api.map.baidu.com/telematics/v3/weather?location=' + encodeURIComponent(city) + '&output=json&ak=rCoT9oPRq1tuugGRb6pcXtN7RUVGGI9K'
         }).then(res => {
             const {dayPictureUrl, weather} = res.results[0].weather_data[0];
             this.setState({

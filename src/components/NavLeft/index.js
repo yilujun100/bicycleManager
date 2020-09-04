@@ -7,12 +7,12 @@ import './index.less';
 const { SubMenu } = Menu;
 
 export default class NavLeft extends React.Component {
-    componentWillMount() {
+    constructor(props) {
+        super(props);
         const menuTreeNode = this.renderMenu(MenuConfig);
-
-        this.setState({
+        this.state = {
             menuTreeNode
-        });
+        };
     }
 
     // 菜单渲染

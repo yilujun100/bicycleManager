@@ -75,6 +75,8 @@ class BasicTable extends Component {
                     dataSource2: res.result.list,
                     selectedRowKeys: [],
                     selectedRows: null,
+                    selectedCheckRowKeys: [],
+                    selectedCheckRows: null,
                     pagination: Utils.pagination(res, current => {
                         _this.params.page = current;
                         this.request();
@@ -99,7 +101,7 @@ class BasicTable extends Component {
 
     // 多选执行删除操作
     handleDelete = () => {
-        const rows = this.state.selectedRows;
+        const rows = this.state.selectedCheckRows;
         const ids = rows.map(item => item.id);
         Modal.info({
             title: '删除提示',
@@ -180,18 +182,18 @@ class BasicTable extends Component {
                 dataIndex: 'time'
             }
         ];
-        const { selectedRowKeys } = this.state;
+        const { selectedRowKeys, selectedCheckRowKeys } = this.state;
         const rowSelection = {
             type: 'radio',
             selectedRowKeys
         };
         const rowCheckSelection = {
             type: 'checkbox',
-            selectedRowKeys,
+            selectedRowKeys: selectedCheckRowKeys,
             onChange: (selectedRowKeys, selectedRows) => {
                 this.setState({
-                    selectedRowKeys,
-                    selectedRows
+                    selectedCheckRowKeys: selectedRowKeys,
+                    selectedCheckRows: selectedRows
                 });
             }
         }
