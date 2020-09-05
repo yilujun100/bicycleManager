@@ -17,6 +17,7 @@ import NoMatch from './../pages/nomatch';
 import Home from './../pages/home';
 import BasicTable from './../pages/table/basicTable';
 import HighTable from './../pages/table/highTable';
+import City from './../pages/city';
 
 export default class IRouter extends React.Component {
     render() {
@@ -42,6 +43,7 @@ export default class IRouter extends React.Component {
                                     <Route path="/form/reg" component={FormRegister} />
                                     <Route path="/table/basic" component={BasicTable} />
                                     <Route path="/table/high" component={HighTable} />
+                                    <Route path="/city" component={City} />
                                     <Route component={NoMatch} />
                                     <Redirect to="/home" />
                                 </Switch>
