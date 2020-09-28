@@ -59,7 +59,10 @@ export default class Order extends Component {
             });
             return;
         }
-        window.open(`/#/common/order/detail/${item.id}`, '_blank');
+        const ORDER_DETAIL_RUL = process.env.NODE_ENV === 'development'
+            ? `/#/common/order/detail/${item.id}`
+            : `/bicyclemanager/#/common/order/detail/${item.id}`;
+        window.open(ORDER_DETAIL_RUL, '_blank');
     };
 
     // 结束订单二次确认
