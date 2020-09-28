@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/bicycleManager/static/css/main.57e1a383.chunk.css",
-    "main.js": "/bicycleManager/static/js/main.0140b556.chunk.js",
-    "main.js.map": "/bicycleManager/static/js/main.0140b556.chunk.js.map",
+    "main.css": "/bicycleManager/static/css/main.c307fb2b.chunk.css",
+    "main.js": "/bicycleManager/static/js/main.e7aae8a6.chunk.js",
+    "main.js.map": "/bicycleManager/static/js/main.e7aae8a6.chunk.js.map",
     "runtime-main.js": "/bicycleManager/static/js/runtime-main.8abcc90b.js",
     "runtime-main.js.map": "/bicycleManager/static/js/runtime-main.8abcc90b.js.map",
-    "static/css/2.c3ddbcb9.chunk.css": "/bicycleManager/static/css/2.c3ddbcb9.chunk.css",
-    "static/js/2.4323cdaf.chunk.js": "/bicycleManager/static/js/2.4323cdaf.chunk.js",
-    "static/js/2.4323cdaf.chunk.js.map": "/bicycleManager/static/js/2.4323cdaf.chunk.js.map",
+    "static/css/2.952bfcba.chunk.css": "/bicycleManager/static/css/2.952bfcba.chunk.css",
+    "static/js/2.0b74f063.chunk.js": "/bicycleManager/static/js/2.0b74f063.chunk.js",
+    "static/js/2.0b74f063.chunk.js.map": "/bicycleManager/static/js/2.0b74f063.chunk.js.map",
     "index.html": "/bicycleManager/index.html",
-    "precache-manifest.ede666a2ac13a1654e9541a4c6df214e.js": "/bicycleManager/precache-manifest.ede666a2ac13a1654e9541a4c6df214e.js",
+    "precache-manifest.80e27f6b50f0d7cc3ec864071dab08e4.js": "/bicycleManager/precache-manifest.80e27f6b50f0d7cc3ec864071dab08e4.js",
     "service-worker.js": "/bicycleManager/service-worker.js",
-    "static/css/2.c3ddbcb9.chunk.css.map": "/bicycleManager/static/css/2.c3ddbcb9.chunk.css.map",
-    "static/css/main.57e1a383.chunk.css.map": "/bicycleManager/static/css/main.57e1a383.chunk.css.map",
-    "static/js/2.4323cdaf.chunk.js.LICENSE.txt": "/bicycleManager/static/js/2.4323cdaf.chunk.js.LICENSE.txt"
+    "static/css/2.952bfcba.chunk.css.map": "/bicycleManager/static/css/2.952bfcba.chunk.css.map",
+    "static/css/main.c307fb2b.chunk.css.map": "/bicycleManager/static/css/main.c307fb2b.chunk.css.map",
+    "static/js/2.0b74f063.chunk.js.LICENSE.txt": "/bicycleManager/static/js/2.0b74f063.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.8abcc90b.js",
-    "static/css/2.c3ddbcb9.chunk.css",
-    "static/js/2.4323cdaf.chunk.js",
-    "static/css/main.57e1a383.chunk.css",
-    "static/js/main.0140b556.chunk.js"
+    "static/css/2.952bfcba.chunk.css",
+    "static/js/2.0b74f063.chunk.js",
+    "static/css/main.c307fb2b.chunk.css",
+    "static/js/main.e7aae8a6.chunk.js"
   ]
 }
