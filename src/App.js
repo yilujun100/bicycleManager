@@ -4,7 +4,7 @@ import './App.css';
 class App extends React.Component {
     render() {
         return (
-            <div>
+            <div style={{width: '100%'}}>
                 {this.props.children}
             </div>
         );
