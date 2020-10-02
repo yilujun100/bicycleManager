@@ -34,7 +34,7 @@ export default class Header extends React.Component {
     }
 
     render() {
-        const { menuName, menuType } = this.props;
+        const { menuType } = this.props;
         const logoSrc = process.env.NODE_ENV === 'development' ? '/assets/logo-ant.svg' : `${process.env.PUBLIC_URL}/assets/logo-ant.svg`;
         return (
             <div className="header" style={{width: '100%'}}>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Card, Button, Table, Form, Modal, message } from 'antd';
 import axios from './../../axios';
 import Utils from './../../utils';
+import BaseForm from './../../components/BaseForm';
 const FormItem = Form.Item;
 
 export default class Order extends Component {
@@ -14,6 +15,43 @@ export default class Order extends Component {
     };
     params = {
         page: 1
+    };
+
+    formList = [
+        {
+            type: 'SELECT',
+            label: '城市',
+            field: 'city',
+            placeholder: '全部',
+            width: 80,
+            list: [
+                { id: '0', name: '全部' },
+                { id: '1', name: '北京' },
+                { id: '2', name: '天津' },
+                { id: '3', name: '上海' }
+            ]
+        },
+        {
+            type: '时间查询'
+        },
+        {
+            type: 'SELECT',
+            label: '订单状态',
+            field: 'order_status',
+            placeholder: '全部',
+            width: 80,
+            list: [
+                { id: '0', name: '全部' },
+                { id: '1', name: '进行中' },
+                { id: '2', name: '结束行程' }
+            ]
+        }
+    ];
+    initialValues = {
+        city: '0',
+        'start_time': '',
+        'end_time': '',
+        order_status: '0'
     };
 
     componentDidMount() {
@@ -114,6 +152,12 @@ export default class Order extends Component {
         });
     };
 
+    handleFilter = params => {
+        console.log(params);
+        this.params = params;
+        this.requestList();
+    };
+
     render() {
         const columns = [
             {
@@ -179,6 +223,9 @@ export default class Order extends Component {
 
         return (
             <div style={{width: '100%'}}>
+                <Card>
+                    <BaseForm formList={this.formList} initialValues={this.initialValues} filterSubmit={this.handleFilter} />
+                </Card>
                 <Card style={{marginTop: 10}}>
                     <Button type="primary" onClick={this.openOrderDetail}>订单详情</Button>
                     <Button type="primary" style={{marginLeft: 10}} onClick={this.handleConfirm}>结束订单</Button>
