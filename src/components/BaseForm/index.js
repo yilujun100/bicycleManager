@@ -40,6 +40,11 @@ class FilterForm extends Component {
                         <Checkbox>{label}</Checkbox>
                     </FormItem>;
                     formItemList.push(CHECKBOX);
+                } else if (type === 'DATE') {
+                    const DATE = <FormItem name={field}>
+                        <DatePicker showTime={true} placeholder={placeholder} format="YYYY-MM-DD HH:mm:ss" />
+                    </FormItem>;
+                    formItemList.push(DATE);
                 }
             });
         }

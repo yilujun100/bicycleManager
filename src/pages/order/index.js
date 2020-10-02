@@ -3,6 +3,7 @@ import { Card, Button, Table, Form, Modal, message } from 'antd';
 import axios from './../../axios';
 import Utils from './../../utils';
 import BaseForm from './../../components/BaseForm';
+import ETable from './../../components/ETable';
 const FormItem = Form.Item;
 
 export default class Order extends Component {
@@ -10,6 +11,7 @@ export default class Order extends Component {
         list: [],
         selectedRowKeys: [],
         selectedItem: null,
+        selectedIds: [],
         orderInfo: null,
         orderConfirmVisible: false
     };
@@ -213,14 +215,14 @@ export default class Order extends Component {
             labelCol: { span: 5 },
             wrapperCol: { span: 19 }
         };
-        const { selectedRowKeys } = this.state;
-        const rowSelection = {
-            type: 'radio',
-            wrapperCol: {
-                span: 19
-            },
-            selectedRowKeys
-        };
+        // const { selectedRowKeys } = this.state;
+        // const rowSelection = {
+        //     type: 'radio',
+        //     wrapperCol: {
+        //         span: 19
+        //     },
+        //     selectedRowKeys
+        // };
 
         return (
             <div style={{width: '100%'}}>
@@ -232,7 +234,17 @@ export default class Order extends Component {
                     <Button type="primary" style={{marginLeft: 10}} onClick={this.handleConfirm}>结束订单</Button>
                 </Card>
                 <div className="content-wrap">
-                    <Table
+                    <ETable
+                        updateSelectedItem={Utils.updateSelectedItem.bind(this)}
+                        columns={columns}
+                        dataSource={this.state.list}
+                        selectedRowKeys={this.state.selectedRowKeys}
+                        selectedIds={this.state.selectedIds}
+                        selectedItem={this.state.selectedItem}
+                        pagination={this.state.pagination}
+                        // rowSelection="checkbox"
+                    />
+                    {/* <Table
                         bordered
                         columns={columns}
                         dataSource={this.state.list}
@@ -245,7 +257,7 @@ export default class Order extends Component {
                                 }
                             };
                         }}
-                    />
+                    /> */}
                 </div>
                 {
                     this.state.orderConfirmVisible && (
