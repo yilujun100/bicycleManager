@@ -77,9 +77,18 @@ export default class Axios {
                         })
                     }
                 } else {
+                    console.log('reject');
                     reject(response.data);
                 }
-            })
+            }).catch(err => {
+                console.log('error', err);
+                Modal.info({
+                    type: 'error',
+                    title: '提示',
+                    content: err.message
+                });
+                loading.style.display = 'none';
+            });
         });
     }
 };
