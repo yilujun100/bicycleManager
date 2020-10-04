@@ -11,7 +11,17 @@ class FilterForm extends Component {
         if (formList && formList.length > 0) {
             formList.forEach((item, i) => {
                 const { type, label, field, placeholder, width } = item;
-                if (type === '时间查询') {
+                if (type === '城市') {
+                    const SELECT = <FormItem label="城市" name="city">
+                        <Select
+                            style={{width: 80}}
+                            placeholder={placeholder}
+                        >
+                            {Utils.getOptionList([{ id: '0', name: '全部' }, { id: '1', name: '北京' }, { id: '2', name: '上海' }, { id: '3', name: '天津' }, { id: '4', name: '杭州' }])}
+                        </Select>
+                    </FormItem>;
+                    formItemList.push(SELECT);
+                } else if (type === '时间查询') {
                     const startTime = <FormItem label="订单时间" name="start_time">
                         <DatePicker showTime={true} placeholder={placeholder} format="YYYY-MM-DD HH:mm:ss" />
                     </FormItem>;

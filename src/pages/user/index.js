@@ -241,7 +241,7 @@ class User extends Component {
                         pagination={this.state.pagination}
                     />
                 </div>
-                {/* <Modal
+                <Modal
                     title={this.state.title}
                     visible={this.state.isVisible}
                     onOk={this.handleSubmit}
@@ -256,7 +256,7 @@ class User extends Component {
                     {...footer}
                 >
                     <UserForm userInfo={this.state.userInfo} type={this.state.type} wrappedComponentRef={inst => this.userFormRef = inst} />
-                </Modal> */}
+                </Modal>
             </div>
         );
     }
