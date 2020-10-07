@@ -143,7 +143,7 @@ module.exports = function(webpackEnv) {
             lessOptions: { // 注意less-loader版本，如果使用less-loader@5,请移除lessOptions这一级直接配置选项
               javascriptEnabled: true,
               modifyVars: {
-                '@primary-color': '#f9c700'
+                '@primary-color': '#1890ff'
               }
             }
           }
