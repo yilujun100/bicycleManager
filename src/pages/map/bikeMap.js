@@ -75,13 +75,13 @@ class BikeMap extends Component {
         this.map.centerAndZoom(endPoint, 11);
 
         // 添加起始图标
-        let startPointIcon = new window.BMap.Icon('/assets/start_point.png', new window.BMap.Size(36, 42), {
+        let startPointIcon = new window.BMap.Icon('assets/start_point.png', new window.BMap.Size(36, 42), {
             imageSize: new window.BMap.Size(36, 42),
             anchor: new window.BMap.Size(18, 42)
         });
         let bikeMarkerStart = new window.BMap.Marker(startPoint, { icon: startPointIcon });
         this.map.addOverlay(bikeMarkerStart);
-        let endPointIcon = new window.BMap.Icon('/assets/end_point.png', new window.BMap.Size(36, 42), {
+        let endPointIcon = new window.BMap.Icon('assets/end_point.png', new window.BMap.Size(36, 42), {
             imageSize: new window.BMap.Size(36, 42),
             anchor: new window.BMap.Size(18, 42)
         });
