@@ -7,11 +7,15 @@ import './index.css';
 // import Admin from './admin';
 import Router from './router';
 import * as serviceWorker from './serviceWorker';
+import { Provider } from 'react-redux';
+import store from './store';
 
 ReactDOM.render(
   <React.StrictMode>
     {/* <Admin /> */}
-    <Router />
+    <Provider store={store}>
+        <Router />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

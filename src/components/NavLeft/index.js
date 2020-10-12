@@ -3,15 +3,20 @@ import { NavLink } from 'react-router-dom';
 import { Menu } from 'antd';
 import MenuConfig from './../../config/menuConfig';
 import './index.less';
+import { connect } from 'react-redux';
+import {
+    getMenuAction
+} from './../../store/actionCreator';
 
 const { SubMenu } = Menu;
 
-export default class NavLeft extends React.Component {
+class NavLeft extends React.Component {
     constructor(props) {
         super(props);
         const menuTreeNode = this.renderMenu(MenuConfig);
         this.state = {
-            menuTreeNode
+            menuTreeNode,
+            currentKey: window.location.hash.replace(/#|\?.*$/g, '')
         };
     }
 
@@ -31,20 +36,48 @@ export default class NavLeft extends React.Component {
         });
     }
 
+    // 菜单点击
+    handleClick = ({ item, key }) => {
+        if (key === this.state.currentKey) {
+            return false;
+        }
+        const { dispatch } = this.props;
+        const action = getMenuAction(item.props.title);
+        dispatch(action);
+        this.setState({
+            currentKey: key
+        });
+    };
+
+    handleHomeClick = () => {
+        const { dispatch } = this.props;
+        const action = getMenuAction('首页');
+        dispatch(action);
+        this.setState({
+            currentKey: ''
+        });
+    };
+
     render() {
         const logoSrc = process.env.NODE_ENV === 'development' ? '/assets/logo-ant.svg' : `${process.env.PUBLIC_URL}/assets/logo-ant.svg`;
         return (
             <div>
-                <div className="logo">
-                    <img src={logoSrc} alt="" />
-                    <h1>Bicycle MS</h1>
-                </div>
+                <NavLink to="/home" onClick={this.handleHomeClick}>
+                    <div className="logo">
+                        <img src={logoSrc} alt="" />
+                        <h1>Bicycle MS</h1>
+                    </div>
+                </NavLink>
                 <Menu
+                    onClick={this.handleClick}
                     theme="dark"
+                    selectedKeys={this.state.currentKey}
                 >
                     { this.state.menuTreeNode }
                 </Menu>
             </div>
         );
     }
-};
+}
+
+export default connect()(NavLeft);

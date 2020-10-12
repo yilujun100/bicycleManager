@@ -1,0 +1,1 @@
+export const SWITCH_MENU = 'switch_menu';
