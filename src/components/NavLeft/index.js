@@ -18,6 +18,11 @@ class NavLeft extends React.Component {
             menuTreeNode,
             currentKey: window.location.hash.replace(/#|\?.*$/g, '')
         };
+        setTimeout(() => {
+            this.setState({
+                currentKey: window.location.hash.replace(/#|\?.*$/g, '')
+            });
+        }, 0)
     }
 
     // 菜单渲染
