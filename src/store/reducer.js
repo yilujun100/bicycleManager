@@ -3,7 +3,7 @@ import {
 } from './actionTypes';
 
 const defaultState = {
-    menuName: ''
+    menuName: '首页'
 };
 
 export default (state = defaultState, action) => {

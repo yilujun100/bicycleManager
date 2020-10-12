@@ -38,7 +38,7 @@ class RichText extends Component {
     render() {
         const { editorContent, editorState } = this.state;
         return (
-            <div>
+            <div style={{width: '100%'}}>
                 <Card style={{marginTop: 10}}>
                     <Button type="primary" onClick={this.handleClearContent}>清空内容</Button>
                     <Button type="primary" onClick={this.handleGetText}>获取HTML文本</Button>

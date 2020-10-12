@@ -54,7 +54,7 @@ class NavLeft extends React.Component {
         const action = getMenuAction('首页');
         dispatch(action);
         this.setState({
-            currentKey: ''
+            currentKey: '/home'
         });
     };
 
