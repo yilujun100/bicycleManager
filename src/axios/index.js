@@ -51,9 +51,11 @@ export default class Axios {
         }
         let baseApi = '';
         if (options.isMock) {
-            baseApi = 'https://www.easy-mock.com/mock/5f4fa47a66f90555e2209e3b/api';
+            baseApi = 'http://47.98.220.220:7300/mock/5f8e87b14830e81032f44ba3/api';
+            // baseApi = 'https://www.easy-mock.com/mock/5f4fa47a66f90555e2209e3b/api';
         } else {
-            baseApi = 'https://www.easy-mock.com/mock/5f4fa47a66f90555e2209e3b/api';
+            baseApi = 'http://47.98.220.220:7300/mock/5f8e87b14830e81032f44ba3/api';
+            // baseApi = 'https://www.easy-mock.com/mock/5f4fa47a66f90555e2209e3b/api';
         }
         return new Promise((resolve, reject) => {
             axios({
