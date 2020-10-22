@@ -177,7 +177,10 @@ export default class Order extends Component {
             },
             {
                 title: '手机号',
-                dataIndex: 'mobile'
+                dataIndex: 'mobile',
+                render(mobile) {
+                    return Utils.formatPhone(mobile);
+                }
             },
             {
                 title: '里程',
@@ -192,7 +195,10 @@ export default class Order extends Component {
             },
             {
                 title: '状态',
-                dataIndex: 'status'
+                dataIndex: 'status',
+                render(status) {
+                    return status === 1 ? '进行中' : '已结束';
+                }
             },
             {
                 title: '开始时间',

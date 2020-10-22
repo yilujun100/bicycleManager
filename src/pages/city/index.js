@@ -245,7 +245,9 @@ class City extends Component {
             {
                 title: '操作时间',
                 dataIndex: 'update_time',
-                render: Utils.formateDate
+                render(update_time) {
+                    return Utils.formatDate(update_time);
+                }
             },
             {
                 title: '操作人',
